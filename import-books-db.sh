@@ -33,5 +33,11 @@ echo_green "==========================================="
 echo_green "=== PRZYGOTOWANIE DOCELOWEJ BAZY DANYCH ==="
 echo_green "==========================================="
 
+curl -s https://raw.githubusercontent.com/serafin-tech/lab-db-books/import/books-db.sql | mysql
+
+echo_green "========================"
+echo_green "=== ŁADOWANIE DANYCH ==="
+echo_green "========================"
+
 mysql-csv-import -f lab-db-books/Books_small.csv -D books-db -t books
 mysql-csv-import -f lab-db-books/Ratings_small.csv -D books-db -t ratings
