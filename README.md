@@ -31,16 +31,24 @@
 
 Sugerowane narzędzie do importu: https://github.com/serafin-tech/mysql-csv-import
 
-Polecenia:
+Polecenia (należy podać właściwe wartości zmiennych):
 
 ```sh
-export DBHOST=fqdn.bazy.danych
-export DBUSER=user
-export DBPASS=password
-export DBNAME=lab-db
+cat > .env <<EOT
+DB_HOST=fqdn.bazy.danych
+DB_USER=user
+DB_PASS=password
+DB_NAME=books-db
+EOT
 
-python ./mysql-csv-import.py -f Books.csv -D $DBNAME -t books -H $DBHOST -u $DBUSER -p $DBPASS
-python ./mysql-csv-import.py -f Ratings_small.csv -D $DBNAME -t ratings -H $DBHOST -u $DBUSER -p $DBPASS
+mysql-csv-import -f Books_small.csv -D books-db -t books
+mysql-csv-import -f Ratings_small.csv -D books-db -t ratings
+```
+
+ewentualnie można użyć skryptu: [import-books-db.sh](import-books-db.sh)
+
+```sh
+curl -s https://raw.githubusercontent.com/serafin-tech/lab-db-books/main/import-books-db.sh | bash
 ```
 
 ## Zadania
@@ -49,7 +57,7 @@ Dla książek z bazy policzyć:
 
 1. ilość książek danego wydawcy,
 2. ilość ocen,
-3. średnią ocen,
-4. histogram ocen.
+3. średnią ocen dla książki,
+4. histogram ocen dla książki.
 
 Zadanie dodatkowe: pobrać i zaimportować cały dataset źródłowy.
