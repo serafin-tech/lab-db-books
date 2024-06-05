@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eux
+set -eu
 set -o pipefail
 
 NOCOLOR='\033[0m'

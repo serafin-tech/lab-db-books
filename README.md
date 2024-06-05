@@ -47,13 +47,17 @@ mysql-csv-import -f Ratings_small.csv -D books-db -t ratings
 
 ewentualnie można użyć skryptu: [import-books-db.sh](import-books-db.sh)
 
+```sh
+curl -s https://raw.githubusercontent.com/serafin-tech/lab-db-books/main/import-books-db.sh | bash
+```
+
 ## Zadania
 
 Dla książek z bazy policzyć:
 
 1. ilość książek danego wydawcy,
 2. ilość ocen,
-3. średnią ocen,
-4. histogram ocen.
+3. średnią ocen dla książki,
+4. histogram ocen dla książki.
 
 Zadanie dodatkowe: pobrać i zaimportować cały dataset źródłowy.
