@@ -21,9 +21,15 @@ echo_green "======================================="
 echo_green "=== PRZYGOTOWANIE DANYCH I NARZEDZI ==="
 echo_green "======================================="
 
-git clone https://github.com/serafin-tech/lab-db-books
+if [ ! -d lab-db-books ]
+then
+  git clone https://github.com/serafin-tech/lab-db-books
+fi
 
-git clone https://github.com/serafin-tech/mysql-csv-import
+if [ ! -d mysql-csv-import ]
+then
+  git clone https://github.com/serafin-tech/mysql-csv-import
+fi
 
 mysql-csv-import/buildme.sh
 
