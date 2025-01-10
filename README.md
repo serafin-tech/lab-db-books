@@ -53,11 +53,11 @@ curl -s https://raw.githubusercontent.com/serafin-tech/lab-db-books/main/import-
 
 ## Zadania
 
-Dla książek z bazy policzyć:
+Dla książek z bazy:
 
-1. ilość książek danego wydawcy,
-2. ilość ocen,
-3. średnią ocen dla książki,
-4. histogram ocen dla książki.
+1. policzyć ilość książek danego wydawcy,
+2. policzyć ilość ocen,
+3. policzyć średnią ocen dla książek,
+4. wygenerować histogram ocen dla książki.
 
-Zadanie dodatkowe: pobrać i zaimportować cały dataset źródłowy.
+Zadanie dodatkowe: pobrać i zaimportować cały dataset źródłowy, najlepiej inną metodą niż zaproponowana.
